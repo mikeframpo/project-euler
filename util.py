@@ -34,3 +34,14 @@ def prime_sieve(n):
             isprime[(p * pmult) - 2] = False
     return [i+2 for i in range(len(isprime)) if isprime[i]]
 
+def isqrt(n):
+    x = n
+    y = (x + 1) // 2
+    while y < x:
+        x = y
+        y = (x + n // x) // 2
+    if x**2 == n:
+        return x
+    else:
+        return None
+
